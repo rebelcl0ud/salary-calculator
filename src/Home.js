@@ -30,7 +30,6 @@ export default class Home extends Component {
 	          	onChange={this.props.onHoursInputChange}/>
 	          
 						<button type="submit" onClick={this.props.salaryToHourly}>Get Hourly Rate</button>
-         		<button type="submit" onClick={this.props.goBackClear}>Check Another Salary</button>
          	</div>
         </div>
       </section>
