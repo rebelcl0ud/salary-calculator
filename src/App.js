@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
 import Home from './Home';
+import Results from './Results';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      page: 'home',
       salary: 0,
       weeks: 52,
       hours: 40,
+      hourlyRate: 0,
     }
 
     this.onSalaryInputChange = this.onSalaryInputChange.bind(this);
@@ -16,17 +19,41 @@ class App extends Component {
     this.onHoursInputChange = this.onHoursInputChange.bind(this);
     this.salaryToHourly = this.salaryToHourly.bind(this);
     this.goBackClear = this.goBackClear.bind(this);
+    this.pageRoute = this.pageRoute.bind(this);
   }
 
   componentDidMount() {
     console.log('locked and loaded')
   }
 
+  pageRoute() {
+    switch(this.state.page) {
+      case 'home':
+        // code
+        return <Home globalState={this.state} 
+          onSalaryInputChange={this.onSalaryInputChange}
+          onWeeksInputChange={this.onWeeksInputChange}
+          onHoursInputChange={this.onHoursInputChange}
+          salaryToHourly={this.salaryToHourly}
+          goBackClear={this.goBackClear} />
+        break;
+      case 'results':
+        // code
+        return <Results globalState={this.state} 
+          goBackClear={this.goBackClear} />
+        break;
+      default:
+        return <Home />;
+    }
+  }
+
   goBackClear() {
     this.setState({
+      page: 'home',
       salary: 0,
       weeks: 52,
       hours: 40,
+      hourlyRate: 0,
     })
   }
 
@@ -37,8 +64,17 @@ class App extends Component {
    let hours = this.state.hours;
 
    let hourlyRate = (salary / weeks) / hours;
+   hourlyRate = hourlyRate.toFixed(2);
 
-   console.log(hourlyRate);
+   // console.log(hourlyRate);
+
+   this.setState({
+    page: 'results',
+    salary: salary,
+    weeks: weeks,
+    hours: hours,
+    hourlyRate: hourlyRate,
+   })
   }
 
   // salary
@@ -47,7 +83,7 @@ class App extends Component {
       salary: event.target.value
     })
 
-    console.log(this.state.salary)
+    // console.log(this.state.salary)
   }
 
   // weeks
@@ -55,7 +91,7 @@ class App extends Component {
     this.setState({
       weeks: event.target.value
     })
-    console.log(this.state.weeks)
+    // console.log(this.state.weeks)
   }
 
   // hours
@@ -63,7 +99,7 @@ class App extends Component {
     this.setState({
       hours: event.target.value
     })
-    console.log(this.state.hours)
+    // console.log(this.state.hours)
   }
 
   render() {
@@ -79,13 +115,7 @@ class App extends Component {
               <a href="/" className="main-btn">Sign Up</a>
             </nav>
           </header>
-          <Home
-            globalState={this.state} 
-            onSalaryInputChange={this.onSalaryInputChange}
-            onWeeksInputChange={this.onWeeksInputChange}
-            onHoursInputChange={this.onHoursInputChange}
-            salaryToHourly={this.salaryToHourly}
-            goBackClear={this.goBackClear} />
+          {this.pageRoute()}
         </div>
       </div>
     );
