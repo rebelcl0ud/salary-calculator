@@ -46,12 +46,13 @@ header {
 
 /* HOME */
 #home {
-	margin-top: 75px;
+	margin-top: 50px;
 }
 .calc-logo {
 	float: left;
 	padding: 25px 0 0 0;
 	width: 100%;
+	margin-bottom: 50px;
 }
 
 .form {
