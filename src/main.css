@@ -32,7 +32,6 @@ header {
 	text-decoration: none;
 	border: 1px solid #F7B733;
 	border-radius: 5px;
-	background: #F7B733;
 	text-transform: capitalize;
 	color: #EDF0F2;
 	float: right;
@@ -42,6 +41,7 @@ header {
 
 .main-btn:hover {
 	text-decoration: none;
+	background: #F7B733;
 }
 
 /* HOME */
