@@ -122,7 +122,41 @@ button {
 	text-transform: lowercase;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+/* EXPENSES */
+#expenses {
+	margin-top: 50px;
+}
+
+#expenses h1 {
+	font-size: 2rem;
+	text-transform: capitalize;
+	font-weight: 200;
+	margin-bottom: 25px;
+}
+
+label {
+	display: block;
+	text-transform: uppercase;
+	font-weight: 600;
+	margin: 15px 0;
+	color: #324A5E;
+}
+
+input[type="text"] {
+	display: block;
+	width: 100%;
+	border-radius: 5px;
+	border: none;
+	padding: 10px 15px;
+	margin-bottom: 25px;
+	color: #333333;
+}
+
+#expenses button.register {
+	background: #4ABDAC;
+}
+
+#expenses button.register:hover {
+	text-decoration: none;
+	background: #F7B733;
 }
