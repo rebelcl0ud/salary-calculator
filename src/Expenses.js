@@ -8,7 +8,9 @@ export default class Expenses extends Component {
           <h1>Lifestyle Upkeep</h1> 
           <div className="form col-md-3">
             <label>Daily</label>
-            <input type="text" name="daily" placeholder="$" />
+            <input type="text" name="daily" placeholder="$" 
+              value={this.props.globalState.expenses.dailyExp}
+              readOnly="readOnly" />
             <input type="text" name="daily" placeholder="$" />
             <input type="text" name="daily" placeholder="$" />
             <input type="text" name="daily" placeholder="$" />
@@ -21,7 +23,9 @@ export default class Expenses extends Component {
           </div>
           <div className="form col-md-3">
             <label>Yearly</label>
-            <input type="text" name="yearly" placeholder="$" />
+            <input type="text" name="yearly" placeholder="$" 
+              value={this.props.globalState.expenses.yearlyExp}
+              readOnly="readOnly"/>
             <input type="text" name="yearly" placeholder="$" />
             <input type="text" name="yearly" placeholder="$" />
             <input type="text" name="yearly" placeholder="$" />
@@ -34,7 +38,9 @@ export default class Expenses extends Component {
           </div>
            <div className="form col-md-3">
             <label>Monthly</label>
-            <input type="text" name="monthly" placeholder="$" />
+            <input type="text" name="monthly" placeholder="$" 
+              value={this.props.globalState.expenses.monthlyExp}
+              onChange={this.props.onMonthlyInputChange}/>
             <input type="text" name="monthly" placeholder="$" />
             <input type="text" name="monthly" placeholder="$" />
             <input type="text" name="monthly" placeholder="$" />
