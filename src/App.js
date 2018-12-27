@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Home from './Home';
 import Results from './Results';
+import Expenses from './Expenses';
 
 class App extends Component {
   constructor(props) {
@@ -12,6 +13,11 @@ class App extends Component {
       weeks: 52,
       hours: 40,
       hourlyRate: 0,
+      expenses: {
+        monthlyExp: 0,
+        yearlyExp: 0,
+        dailyExp: 0,
+      }, 
     }
 
     this.onSalaryInputChange = this.onSalaryInputChange.bind(this);
@@ -20,6 +26,10 @@ class App extends Component {
     this.salaryToHourly = this.salaryToHourly.bind(this);
     this.goBackClear = this.goBackClear.bind(this);
     this.pageRoute = this.pageRoute.bind(this);
+    
+    this.goExpenses = this.goExpenses.bind(this);
+    this.onMonthlyInputChange = this.onMonthlyInputChange.bind(this);
+    this.handleExpChange = this.handleExpChange.bind(this);
   }
 
   componentDidMount() {
@@ -40,7 +50,15 @@ class App extends Component {
       case 'results':
         // code
         return <Results globalState={this.state} 
-          goBackClear={this.goBackClear} />
+          goBackClear={this.goBackClear}
+          goExpenses={this.goExpenses} />
+        break;
+      case 'expenses':
+        // code
+        return <Expenses globalState={this.state} 
+          goBackClear={this.goBackClear} 
+          onMonthlyInputChange={this.onMonthlyInputChange}
+          handleExpChange={this.handleExpChange} />
         break;
       default:
         return <Home />;
@@ -57,6 +75,45 @@ class App extends Component {
     })
   }
 
+  // - - - expenses - - - //
+  goExpenses() {
+    this.setState({
+      page: 'expenses',
+    })
+  }
+
+  handleExpChange(monthlyExp) {
+    console.log(this.state.expenses.monthlyExp);
+
+    let yearlyExp = this.state.expenses.monthlyExp * 12
+    yearlyExp = yearlyExp.toFixed(2);
+
+    let dailyExp = this.state.expenses.monthlyExp / 30
+    dailyExp = dailyExp.toFixed(2);
+    
+    console.log('triggered')
+    
+    this.setState({
+      expenses: {
+        yearlyExp: yearlyExp,
+        dailyExp: dailyExp,
+      } 
+    }, () => {
+      console.log(this.state.expenses.yearlyExp, this.state.expenses.dailyExp)
+    })
+  }
+
+  onMonthlyInputChange(event) {  
+    this.setState({
+      expenses: {
+        monthlyExp: event.target.value,
+      } 
+    }, () => {
+      this.handleExpChange()
+    })
+  }
+
+  // - - - salary to hourly - - - //
   salaryToHourly() {
     // (salary / 52) / 40 = hourly rate
    let salary = this.state.salary;
