@@ -122,9 +122,18 @@ button {
 	text-transform: lowercase;
 }
 
+#results button.register {
+	background: #4ABDAC;
+}
+
+#results button.register:hover {
+	text-decoration: none;
+	background: #F7B733;
+}
+
 /* EXPENSES */
 #expenses {
-	margin-top: 50px;
+	margin: 50px 0;
 }
 
 #expenses h1 {
