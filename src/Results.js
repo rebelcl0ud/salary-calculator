@@ -10,6 +10,8 @@ export default class Results extends Component {
             <h2>${this.props.globalState.hourlyRate} /hr</h2>
             
          		<button type="submit" onClick={this.props.goBackClear}>Check Another Salary</button>
+
+            <button type="submit" className="register" onClick={this.props.goExpenses}>Check out target hourly rate for expenses</button>
          	</div>
         </div>
       </section>
