@@ -108,7 +108,7 @@ class App extends Component {
         <div className="container">
           <header>
             <div className="logo" onClick={this.goBackClear}>
-              salary calculator
+              Salary Calculator
             </div>
 
             <nav className="menu">
