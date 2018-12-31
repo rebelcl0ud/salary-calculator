@@ -126,3 +126,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@media screen and (min-width: 320px) and (max-width: 420px) {
+	.logo {
+		float: right;
+	}
+
+	.logo {
+		font-size: 20px;
+	}
+
+	h1 {
+		font-size: 26px;
+	}
+
+	.main-btn {
+		display: none;
+	}
+
+	#home {
+		margin-top: 10px;
+	}
+
+	.calc-logo {
+		margin-bottom: 25px;
+	}
+
+	#results {
+		margin-top: 20px;
+	}
+}
