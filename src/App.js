@@ -112,7 +112,7 @@ class App extends Component {
             </div>
 
             <nav className="menu">
-              <a href="/" className="main-btn">Sign Up</a>
+              <a href="/" className="main-btn">Sign Up; coming soon</a>
             </nav>
           </header>
           {this.pageRoute()}
