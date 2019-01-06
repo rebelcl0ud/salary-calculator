@@ -62,6 +62,19 @@ class App extends Component {
    let salary = this.state.salary;
    let weeks = this.state.weeks;
    let hours = this.state.hours;
+  
+   if(typeof salary !== "number") {
+    salary = salary.replace(/\,/g,'');
+   }
+
+   if(typeof weeks !== "number") {
+    weeks = weeks.replace(/\D/g,'');
+   }
+
+   if(typeof hours !== "number") {
+    hours = hours.replace(/\D/g,'');
+   }
+
 
    let hourlyRate = (salary / weeks) / hours;
    hourlyRate = hourlyRate.toFixed(2);
