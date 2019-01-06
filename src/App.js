@@ -116,6 +116,7 @@ class App extends Component {
             </nav>
           </header>
           {this.pageRoute()}
+          <p className="form col-md-12">Coming Soon: freelance pricing features in progress :)</p>
         </div>
       </div>
     );

@@ -44,6 +44,13 @@ header {
 	background: #F7B733;
 }
 
+p {
+	margin: 25px auto;
+	text-align: center;
+	color: #EDF0F2;
+	text-transform: capitalize;
+}
+
 /* HOME */
 #home {
 	margin-top: 50px;
