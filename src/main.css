@@ -55,11 +55,11 @@ p {
 #home {
 	margin-top: 50px;
 }
+
 .calc-logo {
 	float: left;
-	padding: 25px 0 0 0;
+	margin: 100px 0;
 	width: 100%;
-	margin-bottom: 50px;
 }
 
 .form {
@@ -137,9 +137,6 @@ code {
 @media screen and (min-width: 320px) and (max-width: 420px) {
 	.logo {
 		float: right;
-	}
-
-	.logo {
 		font-size: 20px;
 	}
 
@@ -156,10 +153,19 @@ code {
 	}
 
 	.calc-logo {
-		margin-bottom: 25px;
+		margin: 25px 0;
 	}
 
 	#results {
 		margin-top: 20px;
+	}
+}
+
+@media screen and (min-width: 720px) and (max-width: 900px) {
+	h1 {
+		font-size: 2rem;
+	}
+	.calc-logo {
+		width: 15rem;
 	}
 }
