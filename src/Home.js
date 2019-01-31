@@ -7,11 +7,11 @@ export default class Home extends Component {
     return (
       <section id="home">
         <div className="container">
-        	<div className="col-md-6">
+        	<div className="col-sm-4 col-sm-offset-2 col-md-4 col-md-offset-2">
          		<img className="calc-logo" src={calclogo} alt="calculator" />
          	</div>
          	
-         	<div className="form col-md-6">
+         	<div className="form col-sm-6 col-md-6">
          		<h1>Salary to Hourly</h1>
 
          		<label>Salary</label>
